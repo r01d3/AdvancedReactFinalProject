@@ -40,10 +40,9 @@ Every section has a different background color. The first 2 sections will be emp
 
 ## Steps
 
-Once you open the code lab, you need to install the *Chakra UI* and other referenced libraries by running the `npm install` command from the built-in terminal in the code lab. To toggle the built-in terminal, you need to click the View menu item, then choose the Terminal in the dropdown.
+Once you open the code lab, you need to install the _Chakra UI_ and other referenced libraries by running the `npm install` command from the built-in terminal in the code lab. To toggle the built-in terminal, you need to click the View menu item, then choose the Terminal in the dropdown.
 
 Once the terminal is open (visible), you can run the `npm install` command. This will install all the required missing dependencies, so that you can begin working on the task.
-
 
 ### **Step 1**
 
@@ -57,6 +56,7 @@ Use the `HStack` component to stack the links horizontally.
 Each social should be a `a` tag with a `href` attribute pointing to the corresponding social media page. The `a` tag should have as children a `FontAwesomeIcon` component, which is already imported for you.
 
 The `FontAwesomeIcon` component takes 2 props:
+
 - `icon`: The icon to be displayed. In this case, you should use the `icon` prop from the `social` object.
 - `size`: The size of the icon. You can use the `2x` value.
 
@@ -96,6 +96,7 @@ Open the `Card.js` component and implement the UI for the card. Each card should
 <img src="screenshots/image2.png" alt="drawing" width="1024"/>
 
 You can use the following components from Chakra UI that have been already imported for you:
+
 - HStack,
 - VStack,
 - Image,
@@ -117,18 +118,20 @@ The whole UI of the form is defined for you. You need to implement some missing 
 
 <img src="screenshots/image4.png" alt="drawing" width="1024"/>
 
-a) **Add the proper configuration to the `useFormik` hook, passing an object with 3 properties**: `initialValues`, `onSubmit` and `validationSchema`. 
+a) **Add the proper configuration to the `useFormik` hook, passing an object with 3 properties**: `initialValues`, `onSubmit` and `validationSchema`.
 
 The `initialValues` object should have the following fields:
+
 - `firstName`: The name of the user
 - `email`: The email of the user
 - `type`: 'hireMe' | 'openSource' | 'other'
 - `comment`: A message from the user
 
-The `onSubmit` function should perform an API call by using the `submit` helper from `useSubmit` hook. 
+The `onSubmit` function should perform an API call by using the `submit` helper from `useSubmit` hook.
 Inspect the `useSubmit` custom hook to see the arguments the `submit` function expects.
 
 The `validationSchema` should be a Yup schema that validates the form fields. The validation rules are as follows:
+
 - `firstName`: required field. Otherwise, the error message should be "Required".
 - `email`: required field and a valid email. If empty, the error message should be "Required". If not a valid email, the error message should be "Invalid email address".
 - `type`: Optional field
@@ -138,7 +141,7 @@ b) **Make the `Input` components from Chakra UI controlled components**.
 
 `useFormik` hook returns an object with a function called `getFieldProps` that when called, returns an object with the necessary props to make the input controlled.
 
-c) **Show the error messages for each field when the field is touched and the validation fails**. 
+c) **Show the error messages for each field when the field is touched and the validation fails**.
 
 Each field is grouped in a `FormControl` component. The `FormControl` component takes a `isInvalid` prop that you can use to show the error message.
 
@@ -161,6 +164,7 @@ You need to listen to changes in the `response` object from the `useSubmit` hook
 The `useSubmit` hook is implemented in a way that 50% of the times it will return a successful response and 50% of the times it will return an error response.
 
 The `response` object from the API has 2 properties:
+
 - `type`: 'success' | 'error'
 - `message`: Extra contextual information about the response
 
@@ -190,6 +194,7 @@ When scrolling up, the `transform` style property from the `Box` DOM element sho
 When scrolling down, the `transform` style property from the `Box` DOM element should be `translateY(-200px)`.
 
 Here are some of the elements you may need for the implementation:
+
 - The `useEffect` hook
 - The `useRef` hook
 - Setting up listeners for the scroll event `window.addEventListener('scroll', handleScroll)`
@@ -197,4 +202,3 @@ Here are some of the elements you may need for the implementation:
 - Keeping track of the previous scroll position in a variable
 
 ![](screenshots/header_animation.gif)
-
