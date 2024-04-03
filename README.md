@@ -1,4 +1,4 @@
-## This is the project for Meta-Advanced ReactJS course. 
+## This is the project for Meta-Advanced ReactJS course
 
 # Instructions
 
